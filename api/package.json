@@ -1,0 +1,12 @@
+{
+  "name": "sylas-components",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "bun server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.1"
+  }
+}

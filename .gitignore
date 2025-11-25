@@ -1,0 +1,26 @@
+# Optional npm cache directory
+.npm
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# os
+.DS_Store
+
+# generate output
+dist
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Output of 'npm pack'
+*.tgz
+
+# Dependency directories
+node_modules/
+jspm_packages/

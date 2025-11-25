@@ -1,0 +1,22 @@
+diff --git a/dist/lib/vueOCProviderTemplate.js b/dist/lib/vueOCProviderTemplate.js
+index 229a93058b9439dd34a7ef931ad53b59abaa4b6e..8f5bd5ea72667777559fa6c74c64c6bab42583fb 100644
+--- a/dist/lib/vueOCProviderTemplate.js
++++ b/dist/lib/vueOCProviderTemplate.js
+@@ -16,12 +16,12 @@ function vueOCProviderTemplate({ viewPath, providerFunctions }) {
+     rest.getSetting = getSetting;
+     app = createApp(View, rest)
+     app.mount(element, ssr);
+-  }
+ 
+-  element.parentElement.unmount = () => {
+-    if (app) {
+-      app.unmount();
+-      app = null;
++    element.parentElement.unmount = () => {
++      if (app) {
++        app.unmount();
++        app = null;
++      }
+     }
+   }
+ 

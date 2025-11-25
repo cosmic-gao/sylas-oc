@@ -1,0 +1,36 @@
+{
+  "name": "asdasda",
+  "description": "",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --max-warnings 0 --ext .js,.jsx,.ts,.tsx src",
+    "dev": "oc-server dev",
+    "build": "vue-tsc --noEmit && oc package .",
+    "test": "vitest",
+    "start": "oc dev .. --components asdasda"
+  },
+  "oc": {
+    "files": {
+      "data": "src/server.ts",
+      "template": {
+        "src": "src/App.vue",
+        "type": "oc-template-vue"
+      },
+      "static": [
+        "public"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "oc-server": "^4.0.1",
+    "oc-template-vue-compiler": "^4.0.0",
+    "typescript": "5.8.2",
+    "vite": "^7.1.12",
+    "vitest": "^0.29.7",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.4"
+  }
+}
