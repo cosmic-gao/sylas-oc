@@ -89,7 +89,14 @@ serve({
 
       await create_template(name);
 
-      return new Response(`http://localhost:3000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`);
+      return new Response(
+        JSON.stringify({
+          url: `http://localhost:3000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`
+        }),
+        {
+          headers: { "Content-Type": "application/json" }
+        }
+      );
     }
 
     if (url.pathname === '/update/template' && req.method === "POST") {
