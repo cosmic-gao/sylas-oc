@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    // These are suggested values and will be set when not present in the
-    // tsconfig.json
-    // 'parsedValue' matches the output value from ts.parseJsonConfigFileContent()
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "strict": true,
     "allowJs": true,
@@ -13,8 +10,6 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
 
-    // These values are required and cannot be changed by the user
-    // Keep this in sync with the rollup config
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,

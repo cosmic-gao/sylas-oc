@@ -1,13 +1,10 @@
 {
   "name": "template",
-  "description": "",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "lint": "eslint --max-warnings 0 --ext .js,.jsx,.ts,.tsx src",
     "dev": "oc-server dev",
     "build": "vue-tsc --noEmit && oc package .",
-    "test": "vitest",
     "start": "oc dev .. --components template"
   },
   "oc": {
@@ -23,16 +20,20 @@
     }
   },
   "devDependencies": {
+    "@types/node": "^24.10.1",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
+    "echarts": "6.0.0",
+    "element-plus": "2.11.8",
     "oc-server": "^4.0.1",
     "oc-template-vue-compiler": "^4.0.0",
     "typescript": "5.8.2",
     "vite": "^7.1.12",
     "vitest": "^0.29.7",
     "vue": "^3.5.13",
-    "vue-tsc": "^2.2.4",
-    "echarts": "6.0.0",
-    "element-plus": "2.11.8"
+    "vue-tsc": "^2.2.4"
+  },
+  "dependencies": {
+    "mysql2": "^3.15.3"
   }
 }
