@@ -61,7 +61,7 @@ async function update_view(name: string, content: string) {
 }
 
 async function update_server(name: string, content: string) {
-  const server_path = path.join(OUTPUT_DIR, name, "server.ts");
+  const server_path = path.join(OUTPUT_DIR, name + '/src', "server.ts");
 
   try {
     await access(server_path);
@@ -77,7 +77,7 @@ async function update_server(name: string, content: string) {
 
 
 serve({
-  port: 5001,
+  port: 8089,
   async fetch(req) {
     const url = new URL(req.url);
     if (url.pathname === '/create/template' && req.method === "POST") {
@@ -90,7 +90,7 @@ serve({
 
       await create_template(name);
 
-      return new Response(`http://localhost:5000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`);
+      return new Response(`http://localhost:3000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`);
     }
 
     if (url.pathname === '/update/template' && req.method === "POST") {
@@ -119,4 +119,4 @@ serve({
   },
 });
 
-console.log("Server running on http://localhost:5001");
+console.log("Server running on http://localhost:8089");
