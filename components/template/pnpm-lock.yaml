@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  oc-server:
+    hash: 52ee412e1ed2375f1aca46b407680857e67012638c6e400f44c4d17e3d964f29
+    path: patches/oc-server.patch
   oc-template-vue-compiler@4.0.0:
     hash: 8f92e15d8184c7cd0f5ccb4a441922720a26cd1a7c52e0f1b1264c529b42938e
     path: patches/oc-template-vue-compiler@4.0.0.patch
@@ -21,7 +24,7 @@ importers:
         version: 0.7.0(typescript@5.8.2)(vue@3.5.25(typescript@5.8.2))
       oc-server:
         specifier: ^4.0.1
-        version: 4.0.2(vite@7.2.4(@types/node@24.10.1))
+        version: 4.0.2(patch_hash=52ee412e1ed2375f1aca46b407680857e67012638c6e400f44c4d17e3d964f29)(vite@7.2.4(@types/node@24.10.1))
       oc-template-vue-compiler:
         specifier: ^4.0.0
         version: 4.0.0(patch_hash=8f92e15d8184c7cd0f5ccb4a441922720a26cd1a7c52e0f1b1264c529b42938e)(@types/node@24.10.1)(vite@7.2.4(@types/node@24.10.1))(vue@3.5.25(typescript@5.8.2))
@@ -3856,7 +3859,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  oc-server@4.0.2(vite@7.2.4(@types/node@24.10.1)):
+  oc-server@4.0.2(patch_hash=52ee412e1ed2375f1aca46b407680857e67012638c6e400f44c4d17e3d964f29)(vite@7.2.4(@types/node@24.10.1)):
     dependencies:
       '@fastify/express': 3.0.0
       fastify: 4.29.1

@@ -1,2 +1,3 @@
 patchedDependencies:
+  oc-server: patches/oc-server.patch
   oc-template-vue-compiler@4.0.0: patches/oc-template-vue-compiler@4.0.0.patch

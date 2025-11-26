@@ -116,7 +116,10 @@ serve({
       }
 
       return new Response(
-        JSON.stringify({ message: `Template '${name}' updated successfully.` }),
+        JSON.stringify({ 
+          message: `Template '${name}' updated successfully.`, 
+          url: `http://localhost:3000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530` 
+        }),
         { status: 200, headers: { "Content-Type": "application/json" } }
       );
     }
