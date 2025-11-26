@@ -46,7 +46,6 @@ async function create_template(name: string) {
 
 async function update_view(name: string, content: string) {
   const view_path = path.join(OUTPUT_DIR, name + '/src', "App.vue");
-  console.log(view_path)
 
   try {
     await access(view_path);
