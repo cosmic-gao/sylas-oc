@@ -77,7 +77,7 @@ async function update_server(name: string, content: string) {
 
 
 serve({
-  port: 8089,
+  port: 5001,
   async fetch(req) {
     const url = new URL(req.url);
     if (url.pathname === '/create/template' && req.method === "POST") {
@@ -90,7 +90,7 @@ serve({
 
       await create_template(name);
 
-      return new Response(`http://localhost:3000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`);
+      return new Response(`http://localhost:5000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`);
     }
 
     if (url.pathname === '/update/template' && req.method === "POST") {
@@ -119,4 +119,4 @@ serve({
   },
 });
 
-console.log("Server running on http://localhost:8089");
+console.log("Server running on http://localhost:5001");
