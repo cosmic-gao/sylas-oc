@@ -91,7 +91,7 @@ serve({
 
       return new Response(
         JSON.stringify({
-          url: `http://localhost:5000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`
+          url: `https://intcsp.mspbots.ai/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530`
         }),
         {
           headers: { "Content-Type": "application/json" }
@@ -118,7 +118,7 @@ serve({
       return new Response(
         JSON.stringify({ 
           message: `Template '${name}' updated successfully.`, 
-          url: `http://localhost:5000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530` 
+          url: `https://intcsp.mspbots.ai/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530` 
         }),
         { status: 200, headers: { "Content-Type": "application/json" } }
       );
