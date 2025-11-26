@@ -76,7 +76,7 @@ async function update_server(name: string, content: string) {
 
 
 serve({
-  port: 8089,
+  port: 5001,
   async fetch(req) {
     const url = new URL(req.url);
     if (url.pathname === '/create/template' && req.method === "POST") {
@@ -91,7 +91,7 @@ serve({
 
       return new Response(
         JSON.stringify({
-          url: `http://localhost:3000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`
+          url: `http://localhost:5000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&userId=1`
         }),
         {
           headers: { "Content-Type": "application/json" }
@@ -118,7 +118,7 @@ serve({
       return new Response(
         JSON.stringify({ 
           message: `Template '${name}' updated successfully.`, 
-          url: `http://localhost:3000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530` 
+          url: `http://localhost:5000/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530` 
         }),
         { status: 200, headers: { "Content-Type": "application/json" } }
       );
@@ -128,4 +128,4 @@ serve({
   },
 });
 
-console.log("Server running on http://localhost:8089");
+console.log("Server running on http://localhost:5001");
