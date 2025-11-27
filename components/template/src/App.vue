@@ -9,6 +9,10 @@ async function getFunFact() {
   additionalData.value = await serverClient.funFact({ year: props.born });
 }
 const hobbies = props.hobbies.map((x) => x.toLowerCase()).join(', ')
+
+function greet(name) {
+  console.log("Hello, " + name.toUpperCase()); // 如果 name 是 any，运行时可能报错
+}
 </script>
 
 <template>
