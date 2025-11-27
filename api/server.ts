@@ -1,6 +1,6 @@
 import { serve, write } from "bun";
 import fs from "fs";
-import { cp, mkdir, access, readFile, writeFile } from "fs/promises";
+import { cp, mkdir, access, rm, readFile, writeFile } from "fs/promises";
 import { spawn } from "child_process";
 import path from "path";
 
@@ -139,13 +139,14 @@ serve({
 
       return await queue(name, async () => {
         try {
+          await rm(path.join(OUTPUT_DIR, name + '/_package'), { recursive: true, force: true });
           if (view) await update_view(name, view);
           if (server) await update_server(name, server);
 
           if (view || server) {
             const target_dir = path.join(OUTPUT_DIR, name);
             await run_command("pnpm", ["install"], target_dir);
-            // await run_command("pnpm", ["build"], target_dir);
+            await run_command("pnpm", ["build"], target_dir);
           }
 
           const body = JSON.stringify({
