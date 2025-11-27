@@ -1,6 +1,4 @@
 import { Server } from 'oc-server';
-import fs from "fs"
-import mysql from 'mysql2/promise';
 
 const userDatabase = [
   { name: 'John Doe', born: 1986, hobbies: ['Swimming', 'Basketball'] },
@@ -44,22 +42,6 @@ export const server = new Server({
   // Main handler - returns initial data for component rendering
   // This runs when the component is first loaded
   .handler(async (params, ctx) => {
-
-    const dbConfig = {
-      host: 'localhost',       // 数据库主机
-      user: 'root',            // 用户名
-      password: '123456', // 密码
-      database: 'sys'  // 数据库名
-    };
-
-    const connection = await mysql.createConnection(dbConfig);
-    console.log('✅ 数据库连接成功！');
-
-    const [rows, fields] = await connection.execute('SELECT * FROM sys_config');
-    console.log(rows);
-
-    console.log(fs.existsSync('/file.txt'))
-
     const { userId } = params;
     const user = await getUser(userId);
     const [firstName, lastName] = user.name.split(/\s+/);
