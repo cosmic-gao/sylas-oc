@@ -117,7 +117,7 @@ serve({
         try {
           await create_template(name);
           const body = JSON.stringify({
-            url: `https://intcsp.mspbots.ai/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530`
+            url: `https://intcsp.mspbots.ai/${name}/1.0.0/?tenant_code=1285403951449878530`
           });
           return new Response(body, { status: 200, headers: { "Content-Type": "application/json" } });
         } catch (err: any) {
@@ -151,7 +151,7 @@ serve({
 
           const body = JSON.stringify({
             message: `Template '${name}' updated successfully.`,
-            url: `https://intcsp.mspbots.ai/${name}/1.0.0/~preview/?__ocAcceptLanguage=*&tenant_code=1285403951449878530`
+            url: `https://intcsp.mspbots.ai/${name}/1.0.0/?tenant_code=1285403951449878530`
           });
           return new Response(body, { status: 200, headers: { "Content-Type": "application/json" } });
         } catch (err: any) {
